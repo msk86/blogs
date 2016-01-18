@@ -31,11 +31,13 @@
 * 引用类库，例如使用`underscore.js`的`_.range(100)`。这在本质上和自己抽象并无太大的区别，只是在项目需要使用`underscore.js`的时候，给我们提供了一些额外的便利。
 * CoffeeScript或者TypeScript（特殊时期的产物，虽然还在维护，但是我认为ES6、ES7最终会成为主流），提供了类似Ruby的Range语法：`array = [1..100]`
 * 一些快捷的创建方法，例如：
-      sequence = Array.apply(0, Array(100))
-        .map(function(v, k) {return k;});
-      // [0, 1, ..., 99]
-      // 因为: 1 in Array(100) === false
-      // 即此时数组还没有任何下标，所以这里必须用Array(100)再创建一个数组，才会有可用的数组下标
+
+        sequence = Array.apply(0, Array(100))
+            .map(function(v, k) {return k;});
+        // [0, 1, ..., 99]
+        // 因为: 1 in Array(100) === false
+        // 即此时数组还没有任何下标，所以这里必须用Array(100)再创建一个数组，才会有可用的数组下标
+        
 作为一个程序员，我希望能够写出一些非常漂亮的代码，这样写出来的`range`方法非常炫酷，细看的话，每个人也能看明白是什么意思，用它来代替`for loop`我认为是一个还不错的选择。
 
 ## 新时代
